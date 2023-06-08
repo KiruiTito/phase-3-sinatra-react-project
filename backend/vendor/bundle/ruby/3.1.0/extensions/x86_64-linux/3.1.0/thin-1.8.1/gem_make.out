@@ -1,12 +1,12 @@
-current directory: /home/tiito/Development/code/Phase-3/phase-3-sinatra-react-project/vendor/bundle/ruby/3.1.0/gems/thin-1.8.1/ext/thin_parser
-/home/tiito/.rbenv/versions/3.1.2/bin/ruby -I /home/tiito/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230608-209208-1049im.rb extconf.rb
+current directory: /home/tiito/Development/code/Phase-3/phase-3-sinatra-react-project/backend/vendor/bundle/ruby/3.1.0/gems/thin-1.8.1/ext/thin_parser
+/home/tiito/.rbenv/versions/3.1.2/bin/ruby -I /home/tiito/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230608-269724-r384fz.rb extconf.rb
 checking for main() in -lc... yes
 creating Makefile
 
-current directory: /home/tiito/Development/code/Phase-3/phase-3-sinatra-react-project/vendor/bundle/ruby/3.1.0/gems/thin-1.8.1/ext/thin_parser
+current directory: /home/tiito/Development/code/Phase-3/phase-3-sinatra-react-project/backend/vendor/bundle/ruby/3.1.0/gems/thin-1.8.1/ext/thin_parser
 make DESTDIR\= clean
 
-current directory: /home/tiito/Development/code/Phase-3/phase-3-sinatra-react-project/vendor/bundle/ruby/3.1.0/gems/thin-1.8.1/ext/thin_parser
+current directory: /home/tiito/Development/code/Phase-3/phase-3-sinatra-react-project/backend/vendor/bundle/ruby/3.1.0/gems/thin-1.8.1/ext/thin_parser
 make DESTDIR\=
 compiling parser.c
 parser.c:31:18: warning: ‘http_parser_en_main’ defined but not used [-Wunused-const-variable=]
@@ -18,6 +18,6 @@ cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand�
 compiling thin.c
 linking shared-object thin_parser.so
 
-current directory: /home/tiito/Development/code/Phase-3/phase-3-sinatra-react-project/vendor/bundle/ruby/3.1.0/gems/thin-1.8.1/ext/thin_parser
+current directory: /home/tiito/Development/code/Phase-3/phase-3-sinatra-react-project/backend/vendor/bundle/ruby/3.1.0/gems/thin-1.8.1/ext/thin_parser
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 thin_parser.so ./.gem.20230608-209208-j5qe78
+/usr/bin/install -c -m 0755 thin_parser.so ./.gem.20230608-269724-5hojhh
