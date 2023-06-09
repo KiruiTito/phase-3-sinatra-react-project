@@ -91,14 +91,14 @@ const DataTable = ({ path, user }) => {
       (path === "Property" && user.partner_type === "Hotel") ||
       (path === "PropertyRequests" && user.partner_type === "Hotel")
     ) {
-      data = await axios.get(`http://localhost:5000/hotels/gethotelbyid/${id}`);
+      data = await axios.get(`http://localhost:3000/hotels/gethotelbyid/${id}`);
       if (data) {
         navigate("/viewproperty", {
           state: { data: data.data, user: user, path: path },
         });
       }
     } else if (path === "users") {
-      data = await axios.get(`http://localhost:5000/user/getuserbyid/${id}`);
+      data = await axios.get(`http://localhost:3000/user/getuserbyid/${id}`);
       if (data) {
         navigate("/viewproperty", {
           state: { data: data.data, user: user, path: path },
@@ -111,7 +111,7 @@ const DataTable = ({ path, user }) => {
       (path === "PropertyRequests" && user.partner_type === "Parking")
     ) {
       data = await axios.get(
-        `http://localhost:5000/parking/getParkingById/${id}`
+        `http://localhost:3000/parking/getParkingById/${id}`
       );
       if (data) {
         navigate("/viewproperty", {
@@ -125,7 +125,7 @@ const DataTable = ({ path, user }) => {
       (path === "PropertyRequests" && user.partner_type === "HotelAndParking")
     ) {
       data = await axios.get(
-        `http://localhost:5000/hotelandparking/gethotelandparkingbyid/${id}`
+        `http://localhost:3000/hotelandparking/gethotelandparkingbyid/${id}`
       );
       if (data) {
         navigate("/viewproperty", {
@@ -140,7 +140,7 @@ const DataTable = ({ path, user }) => {
       path === "parkingbookings" ||
       path === "hotelandparkingbookings"
     ) {
-      data = await axios.get(`http://localhost:5000/booking/getBooking/${id}`);
+      data = await axios.get(`http://localhost:3000/booking/getBooking/${id}`);
       if (data) {
         navigate("/viewbookingdetails", {
           state: { data: data.data, user: user, path: path },
@@ -152,14 +152,14 @@ const DataTable = ({ path, user }) => {
   const handleApprove = async (id) => {
     let data;
     if (path === "hotelRequests") {
-      data = await axios.put(`http://localhost:5000/hotels/approvehotel/${id}`);
+      data = await axios.put(`http://localhost:3000/hotels/approvehotel/${id}`);
     } else if (path === "parkingRequests") {
       data = await axios.put(
-        `http://localhost:5000/parking/approveParking/${id}`
+        `http://localhost:3000/parking/approveParking/${id}`
       );
     } else if (path === "hotelAndParkingRequests") {
       data = await axios.put(
-        `http://localhost:5000/hotelandparking/approveHotelAndParking/${id}`
+        `http://localhost:3000/hotelandparking/approveHotelAndParking/${id}`
       );
     }
     if (data) setList(list.filter((item) => item._id !== id));
@@ -170,15 +170,15 @@ const DataTable = ({ path, user }) => {
     let data;
     if (path === "upcominghotelbookings") {
       data = await axios.delete(
-        `http://localhost:5000/booking/cancelHotelReservation/${id}`
+        `http://localhost:3000/booking/cancelHotelReservation/${id}`
       );
     } else if (path === "upcomingparkingbookings") {
       data = await axios.delete(
-        `http://localhost:5000/booking/cancelParkingReservation/${id}`
+        `http://localhost:3000/booking/cancelParkingReservation/${id}`
       );
     } else if (path === "upcominghotelandparkingbookings") {
       data = await axios.delete(
-        `http://localhost:5000/booking/cancelHotelAndParkingReservation/${id}`
+        `http://localhost:3000/booking/cancelHotelAndParkingReservation/${id}`
       );
     }
     if (data) setList(list.filter((item) => item._id !== id));
@@ -188,17 +188,17 @@ const DataTable = ({ path, user }) => {
     let data;
     if (path === "hotelRequests") {
       data = await axios.put(
-        `http://localhost:5000/hotels/approvehotelAndUpdateRating/${id}`,
+        `http://localhost:3000/hotels/approvehotelAndUpdateRating/${id}`,
         { rating: rating }
       );
     } else if (path === "parkingRequests") {
       data = await axios.put(
-        `http://localhost:5000/parking/approveParkingAndUpdateRating/${id}`,
+        `http://localhost:3000/parking/approveParkingAndUpdateRating/${id}`,
         { rating: rating }
       );
     } else if (path === "hotelAndParkingRequests") {
       data = await axios.put(
-        `http://localhost:5000/hotelandparking/approveHotelAndParkingAndUpdateRating/${id}`,
+        `http://localhost:3000/hotelandparking/approveHotelAndParkingAndUpdateRating/${id}`,
         { hotel_rating: rating }
       );
     }

@@ -32,7 +32,7 @@ const FeaturedProperties = () => {
     if (activePath === "hotel") {
       try {
         const response = await fetch(
-          `http://localhost:5000/hotels/gettophotels`
+          `http://localhost:3000/hotels/gettophotels`
         );
         if (response.ok) {
           const data = await response.json();
@@ -49,7 +49,7 @@ const FeaturedProperties = () => {
     } else if (activePath === "hotelAndParking") {
       try {
         const response = await fetch(
-          `http://localhost:5000/hotelandparking/gettophotelandparkings`
+          `http://localhost:3000/hotelandparking/gettophotelandparkings`
         );
         if (response.ok) {
           const data = await response.json();

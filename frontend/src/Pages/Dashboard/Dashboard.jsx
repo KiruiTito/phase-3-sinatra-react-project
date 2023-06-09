@@ -43,19 +43,19 @@ export default function Dashboard() {
       hotelAndParking = [];
     if (addHotelOperatingCity) {
       hotel = await axios.put(
-        `http://localhost:5000/OperatingProperty/addOperatingHotelCity`,
+        `http://localhost:3000/OperatingProperty/addOperatingHotelCity`,
         { type: "Hotel", city: name }
       );
     }
     if (addParkingOperatingCity) {
       parking = await axios.put(
-        `http://localhost:5000/OperatingProperty/addOperatingHotelCity`,
+        `http://localhost:3000/OperatingProperty/addOperatingHotelCity`,
         { type: "Parking", city: name }
       );
     }
     if (addHotelAndParkingOperatingCity) {
       hotelAndParking = await axios.put(
-        `http://localhost:5000/OperatingProperty/addOperatingHotelCity`,
+        `http://localhost:3000/OperatingProperty/addOperatingHotelCity`,
         { type: "HotelAndParking", city: name }
       );
     }
@@ -73,34 +73,34 @@ export default function Dashboard() {
     try {
       if (view === "admin") {
         const hotelNum = await axios.get(
-          "http://localhost:5000/hotels/getallhotels"
+          "http://localhost:3000/hotels/getallhotels"
         );
 
         const parkingNum = await axios.get(
-          "http://localhost:5000/parking/getallparkings"
+          "http://localhost:3000/parking/getallparkings"
         );
 
         const hotelAndParkingNum = await axios.get(
-          "http://localhost:5000/hotelandparking/getallhotelandparkings"
+          "http://localhost:3000/hotelandparking/getallhotelandparkings"
         );
 
         const bookingsNum = await axios.get(
-          "http://localhost:5000/booking/getAllPreviousBookings"
+          "http://localhost:3000/booking/getAllPreviousBookings"
         );
         const pendingHotelNum = await axios.get(
-          "http://localhost:5000/hotels/getPendinghotels"
+          "http://localhost:3000/hotels/getPendinghotels"
         );
 
         const pendingParkingNum = await axios.get(
-          "http://localhost:5000/parking/getpendingparkings"
+          "http://localhost:3000/parking/getpendingparkings"
         );
 
         const pendingHotelAndParkingNum = await axios.get(
-          "http://localhost:5000/hotelandparking/getPendinghotelandparkings"
+          "http://localhost:3000/hotelandparking/getPendinghotelandparkings"
         );
 
         const upcomingBookingsNum = await axios.get(
-          "http://localhost:5000/booking/getAllUpcommingBookings"
+          "http://localhost:3000/booking/getAllUpcommingBookings"
         );
 
         dispatch({
@@ -177,18 +177,18 @@ export default function Dashboard() {
       } else if (view === "partner") {
         if (user.partner_type === "Hotel") {
           const hotelNum = await axios.get(
-            `http://localhost:5000/hotels/getApprovedhotelbyonwerid/${user._id}`
+            `http://localhost:3000/hotels/getApprovedhotelbyonwerid/${user._id}`
           );
 
           const bookingsNum = await axios.get(
-            `http://localhost:5000/booking/getPreviousBookingsByHotelOwnerId/${user._id}`
+            `http://localhost:3000/booking/getPreviousBookingsByHotelOwnerId/${user._id}`
           );
           const pendingHotelNum = await axios.get(
-            `http://localhost:5000/hotels/getUnapprovedhotelbyonwerid/${user._id}`
+            `http://localhost:3000/hotels/getUnapprovedhotelbyonwerid/${user._id}`
           );
 
           const upcomingbBookingsNum = await axios.get(
-            `http://localhost:5000/booking/getUpcommingBookingsByHotelOwnerId/${user._id}`
+            `http://localhost:3000/booking/getUpcommingBookingsByHotelOwnerId/${user._id}`
           );
 
           dispatch({
@@ -232,19 +232,19 @@ export default function Dashboard() {
           ];
         } else if (user.partner_type === "Parking") {
           const parkingNum = await axios.get(
-            `http://localhost:5000/parking/getApprovedParkingByOwnerId/${user._id}`
+            `http://localhost:3000/parking/getApprovedParkingByOwnerId/${user._id}`
           );
 
           const bookingsNum = await axios.get(
-            `http://localhost:5000/booking/getPreviousBookingsByParkingOwnerId/${user._id}`
+            `http://localhost:3000/booking/getPreviousBookingsByParkingOwnerId/${user._id}`
           );
 
           const pendingParkingNum = await axios.get(
-            `http://localhost:5000/parking/getUnapprovedParkingByOwnerId/${user._id}`
+            `http://localhost:3000/parking/getUnapprovedParkingByOwnerId/${user._id}`
           );
 
           const upcomingbBookingsNum = await axios.get(
-            `http://localhost:5000/booking/getUpcommingBookingsByParkingOwnerId/${user._id}`
+            `http://localhost:3000/booking/getUpcommingBookingsByParkingOwnerId/${user._id}`
           );
 
           dispatch({
@@ -288,19 +288,19 @@ export default function Dashboard() {
           ];
         } else if (user.partner_type === "HotelAndParking") {
           const hotelAndParkingNum = await axios.get(
-            `http://localhost:5000/hotelandparking/getApprovedhotelandparkingbyownerid/${user._id}`
+            `http://localhost:3000/hotelandparking/getApprovedhotelandparkingbyownerid/${user._id}`
           );
 
           const bookingsNum = await axios.get(
-            `http://localhost:5000/booking/getPreviousBookingsByHotelAndParkingOwnerId/${user._id}`
+            `http://localhost:3000/booking/getPreviousBookingsByHotelAndParkingOwnerId/${user._id}`
           );
 
           const pendingHotelAndParkingNum = await axios.get(
-            `http://localhost:5000/hotelandparking/getUnapprovedhotelandparkingbyownerid/${user._id}`
+            `http://localhost:3000/hotelandparking/getUnapprovedhotelandparkingbyownerid/${user._id}`
           );
 
           const upcomingbBookingsNum = await axios.get(
-            `http://localhost:5000/booking/getUpcomingBookingHotelandParkingByUserId/${user._id}`
+            `http://localhost:3000/booking/getUpcomingBookingHotelandParkingByUserId/${user._id}`
           );
 
           dispatch({
@@ -346,30 +346,30 @@ export default function Dashboard() {
       } else if (view === "user") {
         const user = JSON.parse(localStorage.getItem("user"));
         const prevHotelBookingNum = await axios.get(
-          `http://localhost:5000/booking/getPreviousBookingHotelByUserId/${user._id}`
+          `http://localhost:3000/booking/getPreviousBookingHotelByUserId/${user._id}`
         );
         const prevParkingBookingNum = await axios.get(
-          `http://localhost:5000/booking/getPreviousBookingParkingByUserId/${user._id}`
+          `http://localhost:3000/booking/getPreviousBookingParkingByUserId/${user._id}`
         );
         const prevHotelAndParkingBookingNum = await axios.get(
-          `http://localhost:5000/booking/getPreviousBookingHotelandParkingByUserId/${user._id}`
+          `http://localhost:3000/booking/getPreviousBookingHotelandParkingByUserId/${user._id}`
         );
         // Remaining
         const prevTotalBookingNum = await axios.get(
-          `http://localhost:5000/booking/getCompletedBookingByUserId/${user._id}`
+          `http://localhost:3000/booking/getCompletedBookingByUserId/${user._id}`
         );
         const upcomingHotelBookingNum = await axios.get(
-          `http://localhost:5000/booking/getUpcomingBookingHotelByUserId/${user._id}`
+          `http://localhost:3000/booking/getUpcomingBookingHotelByUserId/${user._id}`
         );
         const upcomingParkingBookingNum = await axios.get(
-          `http://localhost:5000/booking/getUpcomingBookingParkingByUserId/${user._id}`
+          `http://localhost:3000/booking/getUpcomingBookingParkingByUserId/${user._id}`
         );
         const upcomingHotelAndParkingBookingNum = await axios.get(
-          `http://localhost:5000/booking/getUpcomingBookingHotelandParkingByUserId/${user._id}`
+          `http://localhost:3000/booking/getUpcomingBookingHotelandParkingByUserId/${user._id}`
         );
         // Remaining
         const upcomingTotalBookingNum = await axios.get(
-          `http://localhost:5000/booking/getCompletedBookingByUserId/${user._id}`
+          `http://localhost:3000/booking/getCompletedBookingByUserId/${user._id}`
         );
 
         dispatch({
@@ -453,13 +453,13 @@ export default function Dashboard() {
     let data = {};
     try {
       const hotel = await axios.get(
-        "http://localhost:5000/hotels/chart/hotelData"
+        "http://localhost:3000/hotels/chart/hotelData"
       );
       const parking = await axios.get(
-        "http://localhost:5000/parking/chart/parkingData"
+        "http://localhost:3000/parking/chart/parkingData"
       );
       const hotelAndParking = await axios.get(
-        "http://localhost:5000/hotelandparking/chart/hotelandparkingData"
+        "http://localhost:3000/hotelandparking/chart/hotelandparkingData"
       );
       data = {
         hotel: { name: "Hotel", data: hotel.data },

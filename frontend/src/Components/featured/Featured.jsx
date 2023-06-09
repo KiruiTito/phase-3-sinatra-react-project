@@ -22,7 +22,7 @@ const Featured = () => {
   const getCityCount = async (city) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/hotels/getcountofapprovedhotelbycity/${city}`
+        `http://localhost:3000/hotels/getcountofapprovedhotelbycity/${city}`
       );
       if (response.status === 200) {
         return response.data.count;
@@ -59,7 +59,7 @@ const Featured = () => {
       try {
         dispatch({ type: "SET_HOTEL_DATA", payload: [] });
         const response = await fetch(
-          `http://localhost:5000/hotels/gethotelbycity/${city}`
+          `http://localhost:3000/hotels/gethotelbycity/${city}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -76,7 +76,7 @@ const Featured = () => {
       try {
         dispatch({ type: "SET_HOTEL_DATA", payload: [] });
         const response = await fetch(
-          `http://localhost:5000/hotelandparking/cityhotel/${city}`
+          `http://localhost:3000/hotelandparking/cityhotel/${city}`
         );
         if (response.ok) {
           const data = await response.json();

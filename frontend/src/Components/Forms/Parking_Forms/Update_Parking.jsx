@@ -45,9 +45,9 @@ const UpdateParking = () => {
       "This parking space is located just steps away from the biggest shopping mall in town and is perfect for shoppers who want to park their car safely and conveniently.",
     price: 50,
     photos: [
-      "http://localhost:5000/uploads/ParkingImages/parking13.jpg",
-      "http://localhost:5000/uploads/ParkingImages/parking14.jpg",
-      "http://localhost:5000/uploads/ParkingImages/parking16.jpg",
+      "http://localhost:3000/uploads/ParkingImages/parking13.jpg",
+      "http://localhost:3000/uploads/ParkingImages/parking14.jpg",
+      "http://localhost:3000/uploads/ParkingImages/parking16.jpg",
     ],
     city: "New York",
     rating: 4,
@@ -87,7 +87,7 @@ const UpdateParking = () => {
       `Are you Sure You Want to Delete This Image? It will be permanently deleted from the Server!`
     );
 
-    let url = `http://localhost:5000/parking/deleteparkingimage/${defaultFormValues._id}`;
+    let url = `http://localhost:3000/parking/deleteparkingimage/${defaultFormValues._id}`;
     const data = { link: image.blobUrl }; // Request body data as an object
     const options = {
       method: "DELETE", // Replace with the desired HTTP method (e.g., POST, PUT, DELETE)
@@ -164,7 +164,7 @@ const UpdateParking = () => {
     for (let i = 0; i < parkingImages.length; i++) {
       formData.append("photos", parkingImages[i].file);
     }
-    const url = `http://localhost:5000/parking/updateparkingdata/${formValues._id}`;
+    const url = `http://localhost:3000/parking/updateparkingdata/${formValues._id}`;
 
     const options = {
       method: "PATCH",

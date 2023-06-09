@@ -23,7 +23,7 @@ const Signin = () => {
   // code for loader top
 
   const googleAuth = () => {
-    window.open(`http://localhost:5000/user/google`);
+    window.open(`http://localhost:3000/user/google`);
   };
 
   const [progress, setProgress] = React.useState(0);
@@ -92,7 +92,7 @@ const Signin = () => {
 
   // const handleSubmit = async (event) => {
   //   event.preventDefault();
-  //   const response = await fetch("http://localhost:5000/user/userlogin", {
+  //   const response = await fetch("http://localhost:3000/user/userlogin", {
   //     method: "POST",
   //     credentials: "include",
   //     headers: {
@@ -123,7 +123,7 @@ const Signin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/user/userlogin",
+        "http://localhost:3000/user/userlogin",
         {
           email,
           password,

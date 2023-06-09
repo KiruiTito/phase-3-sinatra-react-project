@@ -10,7 +10,8 @@ import Signup from "./Pages/Signup/Signup";
 import Forgetpass from "./Pages/Forgetpassword/Forgetpass";
 import Otpverify from "./Pages/OtpVerification/Otpverify";
 import Changepassword from "./Pages/ChangePassword/Changepassword";
-// import Map from "./Components/Map/Map";
+
+
 import List from "./Pages/list/List";
 import HotelForm from "./Pages/hotelForm/Hotel";
 import RoomForm from "./Pages/roomForm/Room";
@@ -77,7 +78,7 @@ function App() {
       },
       {
         id: 2,
-        // url: "http://localhost:5000/uploads/ParkingImages/parking2.jpg",
+        // url: "http://localhost:3000/uploads/ParkingImages/parking2.jpg",
         url: "https://picsum.photos/300/200",
         alt: "Example Picture 2",
       },

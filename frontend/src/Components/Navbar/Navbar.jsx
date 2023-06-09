@@ -45,7 +45,7 @@ const Navbar = ({ list }) => {
   // get logged in user from database
 
   // const GetUserFromBacked = async () => {
-  //   const url = "http://localhost:5000/user/protected";
+  //   const url = "http://localhost:3000/user/protected";
   //   const options = {
   //     method: "GET",
   //     headers: {
@@ -327,7 +327,7 @@ const Navbar = ({ list }) => {
 
     if (path === "/parking") {
       try {
-        const url = `http://localhost:5000/parking/search?city=${cityParking}&vehicles=${c}`;
+        const url = `http://localhost:3000/parking/search?city=${cityParking}&vehicles=${c}`;
         const response = await fetch(url, {
           method: "GET",
           // credentials: "include",
@@ -347,7 +347,7 @@ const Navbar = ({ list }) => {
   };
 
   const HandleLogout = async () => {
-    let url = "http://localhost:5000/user/userlogout";
+    let url = "http://localhost:3000/user/userlogout";
     let options = {
       method: "GET",
     };

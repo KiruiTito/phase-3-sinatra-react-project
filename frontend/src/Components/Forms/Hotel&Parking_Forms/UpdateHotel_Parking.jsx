@@ -33,13 +33,14 @@ const UpdateHotelAndParking = () => {
     hotel_description:
       "Welcome to the Grandiose Hotel, where luxury meets comfort. Our hotel boasts spacious and elegantly designed rooms, complete with all the modern amenities you need for a relaxing and enjoyable stay. Our plush beds with high-quality linens will provide you with a restful night's sleep.\r\n\r\nOur on-site restaurant serves a delectable range of international cuisines prepared by our expert chefs. You can also unwind with a refreshing cocktail at our bar, which offers an extensive selection of drinks.\r\n\r\nIf you're looking to stay active during your trip, our fitness center is equipped with state-of-the-art equipment to help you maintain your fitness routine. We also have a swimming pool where you can take a refreshing dip and soak up the sun.\r\n\r\nFor business travelers, we offer a fully equipped business center and conference rooms, perfect for hosting meetings and events.\r\n\r\nAt the Grandiose Hotel, our friendly staff is always on hand to provide you with personalized service and ensure that you have a memorable stay. We look forward to welcoming you!",
     hotel_photos: [
-      "http://localhost:5000/uploads/Hotel_Parking_Images/hotelPic5.jpg",
-      "http://localhost:5000/uploads/Hotel_Parking_Images/hotelPic6.jpg",
-      "http://localhost:5000/uploads/Hotel_Parking_Images/hotelPic7.jpg",
-      "http://localhost:5000/uploads/Hotel_Parking_Images/hotelPic8.jpg",
-      "http://localhost:5000/uploads/Hotel_Parking_Images/hotelPic18.jpg",
-      "http://localhost:5000/uploads/Hotel_Parking_Images/hotelPic19.jpg",
-      "http://localhost:5000/uploads/Hotel_Parking_Images/hotelPic20.jpg",
+    "http://localhost:3000/uploads/Hotel_Parking_Images/hotelPic5.jpg",
+    "http://localhost:3000/uploads/Hotel_Parking_Images/hotelPic6.jpg",
+    "http://localhost:3000/uploads/Hotel_Parking_Images/hotelPic7.jpg",
+    "http://localhost:3000/uploads/Hotel_Parking_Images/hotelPic8.jpg",
+    "http://localhost:3000/uploads/Hotel_Parking_Images/hotelPic18.jpg",
+    "http://localhost:3000/uploads/Hotel_Parking_Images/hotelPic19.jpg",
+    "http://localhost:3000/uploads/Hotel_Parking_Images/hotelPic20.jpg"
+    
     ],
     hotel_city: "Lahore",
     hotel_country: "Pakistan",
@@ -51,8 +52,8 @@ const UpdateHotelAndParking = () => {
     parking_description:
       "At the Grandiose Hotel, we understand the importance of convenient and secure parking for our guests. That's why we offer a spacious and well-lit parking area, located right on our premises.\r\n\r\nOur parking area is monitored 24/7 by security personnel, ensuring the safety of your vehicle during your stay with us. We also have surveillance cameras installed throughout the parking area for added security.\r\n\r\nOur parking area is suitable for both small and large vehicles, with ample space to accommodate cars, SUVs, and vans. We also have designated spaces for guests with disabilities.\r\n\r\nIn addition to our standard parking services, we also offer valet parking for guests who prefer a more personalized service. Our valet attendants will park your vehicle for you and bring it back to you when you're ready to leave.\r\n\r\nWhether you're visiting us for business or leisure, you can rest assured that your vehicle is in safe hands at the Grandiose Hotel's parking area.",
     parking_photos: [
-      "http://localhost:5000/uploads/Hotel_Parking_Images/parking7.jpg",
-      "http://localhost:5000/uploads/Hotel_Parking_Images/listing-06.jpg",
+      "http://localhost:3000/uploads/Hotel_Parking_Images/parking7.jpg",
+      "http://localhost:3000/uploads/Hotel_Parking_Images/listing-06.jpg",
     ],
     parking_price: 50,
   };
@@ -72,7 +73,7 @@ const UpdateHotelAndParking = () => {
       `Are you Sure You Want to Delete This Image? It will be permanently deleted from the Server!`
     );
 
-    let url = `http://localhost:5000/hotelandparking/deletehotelimage/${defaultFormValues._id}`;
+    let url = `http://localhost:3000/hotelandparking/deletehotelimage/${defaultFormValues._id}`;
     const data = { link: image }; // Request body data as an object
     const options = {
       method: "DELETE", // Replace with the desired HTTP method (e.g., POST, PUT, DELETE)
@@ -92,7 +93,7 @@ const UpdateHotelAndParking = () => {
       `Are you Sure You Want to Delete This Image? It will be permanently deleted from the Server!`
     );
 
-    let url = `http://localhost:5000/hotelandparking/deleteparkingimage/${defaultFormValues._id}`;
+    let url = `http://localhost:3000/hotelandparking/deleteparkingimage/${defaultFormValues._id}`;
     const data = { link: image.blobURL }; // Request body data as an object
     const options = {
       method: "DELETE", // Replace with the desired HTTP method (e.g., POST, PUT, DELETE)
@@ -227,7 +228,7 @@ const UpdateHotelAndParking = () => {
     for (let i = 0; i < parkingimages.length; i++) {
       formData.append("parkingPhotos", parkingimages[i].file);
     }
-    const url = `http://localhost:5000/hotelandparking/updatehotelandparkingdata/${formValues._id}}`;
+    const url = `http://localhost:3000/hotelandparking/updatehotelandparkingdata/${formValues._id}}`;
 
     const options = {
       method: "PATCH",

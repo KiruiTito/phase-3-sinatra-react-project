@@ -135,7 +135,7 @@ const AddParkingForm = () => {
     for (let i = 0; i < parkingImages.length; i++) {
       formData.append("photos", parkingImages[i].file);
     }
-    const url = "http://localhost:5000/parking/addparking";
+    const url = "http://localhost:3000/parking/addparking";
 
     const options = {
       method: "POST",
@@ -167,7 +167,7 @@ const AddParkingForm = () => {
   };
 
   const GetOwners = async () => {
-    const url = "http://localhost:5000/user/getuseridandname";
+    const url = "http://localhost:3000/user/getuseridandname";
     const params = {
       form_type: "parking",
     };

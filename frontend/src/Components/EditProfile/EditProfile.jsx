@@ -37,7 +37,7 @@ export default function EditProfile({ profile }) {
     e.preventDefault();
     try {
       const res = await axios.patch(
-        `http://localhost:5000/user/update/${data._id}`,
+        `http://localhost:3000/user/update/${data._id}`,
         data,
         { new: true }
       );

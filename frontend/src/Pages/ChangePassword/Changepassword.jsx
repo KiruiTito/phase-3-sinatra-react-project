@@ -75,7 +75,7 @@ const Changepassword = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:5000/otp/resetpassword", {
+    const response = await fetch("http://localhost:3000/otp/resetpassword", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

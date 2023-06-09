@@ -38,56 +38,56 @@ const HotelsList = () => {
     if (path === "hotels") {
       dispatch({
         type: "SETURL",
-        payload: "http://localhost:5000/hotels/getallhotels",
+        payload: "http://localhost:3000/hotels/getallhotels",
       });
       dispatch({ type: "SETHEADER", payload: hotelsHeader });
     } else if (path === "users") {
       dispatch({
         type: "SETURL",
-        payload: "http://localhost:5000/user/getall",
+        payload: "http://localhost:3000/user/getall",
       });
       dispatch({ type: "SETHEADER", payload: userHeader });
     } else if (path === "booking") {
       dispatch({
         type: "SETURL",
-        payload: "http://localhost:5000/booking/getBooking",
+        payload: "http://localhost:3000/booking/getBooking",
       });
       dispatch({ type: "SETHEADER", payload: bookingHeader });
     } else if (path === "parkings") {
       dispatch({
         type: "SETURL",
-        payload: "http://localhost:5000/parking/getallparkings",
+        payload: "http://localhost:3000/parking/getallparkings",
       });
       dispatch({ type: "SETHEADER", payload: parkingHeader });
     } else if (path === "HotelsAndParkings") {
       dispatch({
         type: "SETURL",
-        payload: "http://localhost:5000/hotelandparking/getallhotelandparkings",
+        payload: "http://localhost:3000/hotelandparking/getallhotelandparkings",
       });
       dispatch({ type: "SETHEADER", payload: hotelAndParkingHeader });
     } else if (path === "hotelRequests") {
       dispatch({
         type: "SETURL",
-        payload: "http://localhost:5000/hotels/getPendinghotels",
+        payload: "http://localhost:3000/hotels/getPendinghotels",
       });
       dispatch({ type: "SETHEADER", payload: hotelsHeader });
     } else if (path === "parkingRequests") {
       dispatch({
         type: "SETURL",
-        payload: "http://localhost:5000/parking/getpendingparkings",
+        payload: "http://localhost:3000/parking/getpendingparkings",
       });
       dispatch({ type: "SETHEADER", payload: parkingHeader });
     } else if (path === "hotelAndParkingRequests") {
       dispatch({
         type: "SETURL",
         payload:
-          "http://localhost:5000/hotelandparking/getPendinghotelandparkings",
+          "http://localhost:3000/hotelandparking/getPendinghotelandparkings",
       });
       dispatch({ type: "SETHEADER", payload: hotelAndParkingHeader });
     } else if (path === "cancelbooking") {
       dispatch({
         type: "SETURL",
-        payload: "http://localhost:5000/booking/getCancelledBookings",
+        payload: "http://localhost:3000/booking/getCancelledBookings",
       });
       dispatch({ type: "SETHEADER", payload: bookingHeader });
     }
@@ -96,19 +96,19 @@ const HotelsList = () => {
       if (user.partner_type === "Hotel") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/hotels/getApprovedhotelbyonwerid/${id}`,
+          payload: `http://localhost:3000/hotels/getApprovedhotelbyonwerid/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: hotelsHeader });
       } else if (user.partner_type === "Parking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/parking/getApprovedParkingByOwnerId/${id}`,
+          payload: `http://localhost:3000/parking/getApprovedParkingByOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: parkingHeader });
       } else if (user.partner_type === "HotelAndParking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/hotelandparking/getApprovedhotelandparkingbyownerid/${id}`,
+          payload: `http://localhost:3000/hotelandparking/getApprovedhotelandparkingbyownerid/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: hotelAndParkingHeader });
       }
@@ -116,19 +116,19 @@ const HotelsList = () => {
       if (user.partner_type === "Hotel") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/hotels/getUnapprovedhotelbyonwerid/${id}`,
+          payload: `http://localhost:3000/hotels/getUnapprovedhotelbyonwerid/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: hotelsHeader });
       } else if (user.partner_type === "Parking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/parking/getUnapprovedParkingByOwnerId/${id}`,
+          payload: `http://localhost:3000/parking/getUnapprovedParkingByOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: parkingHeader });
       } else if (user.partner_type === "HotelAndParking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/hotelandparking/getUnapprovedhotelandparkingbyownerid/${id}`,
+          payload: `http://localhost:3000/hotelandparking/getUnapprovedhotelandparkingbyownerid/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: hotelAndParkingHeader });
       }
@@ -136,19 +136,19 @@ const HotelsList = () => {
       if (user.partner_type === "Hotel") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/booking/getBookingHotelByOwnerId/${id}`,
+          payload: `http://localhost:3000/booking/getBookingHotelByOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: bookingHotelHeader });
       } else if (user.partner_type === "Parking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/booking/getBookingParkingByOwnerId/${id}`,
+          payload: `http://localhost:3000/booking/getBookingParkingByOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: bookingParkingHeader });
       } else if (user.partner_type === "HotelAndParking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/booking/getBookingHotelandParkingByOwnerId/${id}`,
+          payload: `http://localhost:3000/booking/getBookingHotelandParkingByOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: bookingHotelAndParkingHeader });
       }
@@ -156,19 +156,19 @@ const HotelsList = () => {
       if (user.partner_type === "Hotel") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/booking/getCancelledBookingsByHotelOwnerId/${id}`,
+          payload: `http://localhost:3000/booking/getCancelledBookingsByHotelOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: bookingHotelHeader });
       } else if (user.partner_type === "Parking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/booking/getCancelledBookingsByParkingOwnerId/${id}`,
+          payload: `http://localhost:3000/booking/getCancelledBookingsByParkingOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: bookingParkingHeader });
       } else if (user.partner_type === "HotelAndParking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/booking/getCancelledBookingsByHotelAndParkingOwnerId/${id}`,
+          payload: `http://localhost:3000/booking/getCancelledBookingsByHotelAndParkingOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: bookingHotelAndParkingHeader });
       }
@@ -176,19 +176,19 @@ const HotelsList = () => {
       if (user.partner_type === "Hotel") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/booking/getUpcommingBookingsByHotelOwnerId/${id}`,
+          payload: `http://localhost:3000/booking/getUpcommingBookingsByHotelOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: bookingHotelHeader });
       } else if (user.partner_type === "Parking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/booking/getUpcommingBookingsByParkingOwnerId/${id}`,
+          payload: `http://localhost:3000/booking/getUpcommingBookingsByParkingOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: bookingParkingHeader });
       } else if (user.partner_type === "HotelAndParking") {
         dispatch({
           type: "SETURL",
-          payload: `http://localhost:5000/booking/getUpcommingBookingsByHotelparkingOwnerId/${id}`,
+          payload: `http://localhost:3000/booking/getUpcommingBookingsByHotelparkingOwnerId/${id}`,
         });
         dispatch({ type: "SETHEADER", payload: bookingHotelAndParkingHeader });
       }
@@ -197,43 +197,43 @@ const HotelsList = () => {
     if (path === "hotelbookings") {
       dispatch({
         type: "SETURL",
-        payload: `http://localhost:5000/booking/getPreviousBookingHotelByUserId/${id}`,
+        payload: `http://localhost:3000/booking/getPreviousBookingHotelByUserId/${id}`,
       });
       dispatch({ type: "SETHEADER", payload: bookingHotelHeader });
     } else if (path === "parkingbookings") {
       dispatch({
         type: "SETURL",
-        payload: `http://localhost:5000/booking/getPreviousBookingParkingByUserId/${id}`,
+        payload: `http://localhost:3000/booking/getPreviousBookingParkingByUserId/${id}`,
       });
       dispatch({ type: "SETHEADER", payload: bookingParkingHeader });
     } else if (path === "hotelandparkingbookings") {
       dispatch({
         type: "SETURL",
-        payload: `http://localhost:5000/booking/getPreviousBookingHotelandParkingByUserId/${id}`,
+        payload: `http://localhost:3000/booking/getPreviousBookingHotelandParkingByUserId/${id}`,
       });
       dispatch({ type: "SETHEADER", payload: bookingHotelAndParkingHeader });
     } else if (path === "upcominghotelbookings") {
       dispatch({
         type: "SETURL",
-        payload: `http://localhost:5000/booking/getUpcomingBookingHotelByUserId/${id}`,
+        payload: `http://localhost:3000/booking/getUpcomingBookingHotelByUserId/${id}`,
       });
       dispatch({ type: "SETHEADER", payload: bookingHotelHeader });
     } else if (path === "upcomingparkingbookings") {
       dispatch({
         type: "SETURL",
-        payload: `http://localhost:5000/booking/getUpcomingBookingParkingByUserId/${id}`,
+        payload: `http://localhost:3000/booking/getUpcomingBookingParkingByUserId/${id}`,
       });
       dispatch({ type: "SETHEADER", payload: bookingParkingHeader });
     } else if (path === "upcominghotelandparkingbookings") {
       dispatch({
         type: "SETURL",
-        payload: `http://localhost:5000/booking/getUpcomingBookingHotelandParkingByUserId/${id}`,
+        payload: `http://localhost:3000/booking/getUpcomingBookingHotelandParkingByUserId/${id}`,
       });
       dispatch({ type: "SETHEADER", payload: bookingHotelAndParkingHeader });
     } else if (path === "cancelbooking") {
       dispatch({
         type: "SETURL",
-        payload: `http://localhost:5000/booking/getCancelledBookingsByUserId/${id}`,
+        payload: `http://localhost:3000/booking/getCancelledBookingsByUserId/${id}`,
       });
       dispatch({ type: "SETHEADER", payload: bookingHeader });
     }

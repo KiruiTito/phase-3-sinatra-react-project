@@ -55,7 +55,7 @@ const Otpverify = () => {
   const handleVerify = async (event) => {
     event.preventDefault();
     setAlertOn(true);
-    const response = await fetch("http://localhost:5000/otp/verifyotp", {
+    const response = await fetch("http://localhost:3000/otp/verifyotp", {
       method: "POST",
       // credentials: "include",
       headers: {
